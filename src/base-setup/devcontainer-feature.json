@@ -1,29 +1,30 @@
 {
     "id": "base-setup",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "name": "Liofal Base DevContainer Setup",
     "description": "Shared devcontainer config: tools, extensions, and env vars",
     "features": {
         "ghcr.io/devcontainers/features/aws-cli:1": {},
-        "ghcr.io/goldsam/dev-container-features/flux2:1": {},
-        "ghcr.io/devcontainers/features/kubectl-helm-minikube:1": {},
-        "ghcr.io/casl0/devcontainer-features/eksctl:1": {},
-        "ghcr.io/devcontainers/features/node:1": {},
+        "ghcr.io/devcontainers-extra/features/terraform-asdf:2": {},
+        "ghcr.io/devcontainers-extra/features/kubectl-asdf:2": {},
+        "ghcr.io/devcontainers-extra/features/node-asdf:0": {},
+        "ghcr.io/skriptfabrik/devcontainer-features/gitlab-cli:1": {},
         "ghcr.io/devcontainers/features/github-cli:1": {}
     },
     "customizations": {
         "vscode": {
             "extensions": [
-                "weaveworks.vscode-gitops-tools",
-                "ms-kubernetes-tools.vscode-kubernetes-tools",
+                "Anthropic.claude-code",
+                "kilocode.kilo-code",
                 "GitLab.gitlab-workflow",
-                "openai.chatgpt",
-                "Anthropic.claude-code"
+                "HashiCorp.terraform",
+                "openai.chatgpt"
             ]
         }
     },
     "containerEnv": {
-        "AWS_PROFILE": "SpeosInnovation",
-        "KUBECONFIG": "/home/vscode/.kube/innovation.config"
+        "AWS_PROFILE": "SpeosInnovationProd",
+        "AWS_REGION": "eu-west-1",
+        "KUBECONFIG": "/home/node/.kube/innovationProd.config"
     }
 }
